@@ -27,7 +27,6 @@ public class Solution {
             if(flag==1){
                 i=0;
             }
-            System.out.println("i 1 "+i);
             if(arr[i]!=(i+1)){
                 
                 int index=arr[i]-1;
@@ -36,7 +35,6 @@ public class Solution {
                 arr[index]=temp1;
                 flag=1;
                 
-                System.out.println("Swapping "+arr[i]+" and "+(arr[index]));
                 swaps++;
                 
             }else{
@@ -45,9 +43,6 @@ public class Solution {
         }
         
         
-     //   for(int i=0;i<arr.length;i++){
-      //      System.out.println(arr[i]);
-      //  }
         return swaps;
     }
     
@@ -59,7 +54,6 @@ public class Solution {
 
     static int indexOf(int[] arr1, int ele) {
         for(int i=0;i<arr1.length;i++){
-            System.out.println("Finding.."+arr1[i]);
             if(arr1[i]==ele){
                 return i;
             }
