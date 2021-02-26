@@ -1,4 +1,4 @@
-public import java.io.*;
+import java.io.*;
 import java.math.*;
 import java.security.*;
 import java.text.*;
@@ -8,43 +8,27 @@ import java.util.regex.*;
 
 public class Solution {
 
-    // Complete the arrayManipulation function below.
     static long arrayManipulation(int n, int[][] queries) {
 
-        System.out.println("N "+n);
         long[] arr = new long[n];
         int index1 = 0;
         int index2 = 0;
         long add=0;
-        long max=0;
+        long max = 0;
         
-        for(int i=0; i<n; i++){
-            arr[i]=0;
-        }
-        
-        for(int i=0; i<queries.length; i++){
-            for(int j=0; j<queries.length; j++){
-                    if(j==0){
-                        
-                        index1=queries[i][j];
-                    }
-                    if(j==1){ 
-                        index2=queries[i][j];
-                    }
-                    if(j==2){ 
-                        add=queries[i][j];
-                        for(int k=index1-1; k<index2; k++){
-                            arr[k]=arr[k]+add;
-                        }
-                    }
-            }
-        }
         max=arr[0];
-        for(int i=0; i<n; i++){
-            if(arr[i]>max){
-                max=arr[i];
-            }
+        for(int i=0; i<queries.length; i++){
+                        index1=queries[i][0];
+                        index2=queries[i][1];
+                        add=queries[i][2];
+                        
+                        for(int k=(index1-1); k<index2; k++){
+                            arr[k]=arr[k]+add;
+                            if(arr[k]>max)
+                                max=arr[k];
+                        }
         }
+        
         return max;
     }
 
@@ -80,7 +64,4 @@ public class Solution {
 
         scanner.close();
     }
-}
-class ArrayManipulation {
-    
 }
