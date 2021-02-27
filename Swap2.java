@@ -13,13 +13,6 @@ public class Solution {
 
         int swaps=0;
         int flag=0;
-        int[] temp=Arrays.copyOfRange(arr,0,arr.length);
-        Arrays.sort(temp);
-        int[] arrflag = new int[arr.length];
-        
-        for(int k=0;k<arr.length;k++){
-            arrflag[k]=0;
-        }
         
         
         for(int i = 0 ; i < arr.length ; i++){
