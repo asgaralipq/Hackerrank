@@ -10,25 +10,22 @@ public class Solution {
 
     static long arrayManipulation(int n, int[][] queries) {
 
-        long[] arr = new long[n];
-        int index1 = 0;
-        int index2 = 0;
-        long add=0;
-        long max = 0;
-        
-        max=arr[0];
+        long[] arr = new long[n+2];
+        long sum=0;
+        long max=0;
         for(int i=0; i<queries.length; i++){
-                        index1=queries[i][0];
-                        index2=queries[i][1];
-                        add=queries[i][2];
-                        
-                        for(int k=(index1-1); k<index2; k++){
-                            arr[k]=arr[k]+add;
-                            if(arr[k]>max)
-                                max=arr[k];
-                        }
+            int a=queries[i][0];
+            int b=queries[i][1];
+            long k=queries[i][2];
+            arr[a]+=k;
+            arr[b+1]-=k;
         }
         
+        for(int i=0; i<arr.length; i++){
+            sum=sum+arr[i];
+            if(sum>max)
+                max=sum;
+        }
         return max;
     }
 
